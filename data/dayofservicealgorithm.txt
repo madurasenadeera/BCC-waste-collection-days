@@ -1,0 +1,47 @@
+Waste Collection Type Calculation Algorithm 
+
+
+
+EXAMPLE 1
+
+IF the Collection Day (in WASTE_COLLECTION_DAYS dataset) is “WEDNESDAY EVEN” 
+
+THEN
+
+The Household’s General Waste will be picked up every WEDNESDAY and
+
+IF the current week is designated as an EVEN week (in WASTE_COLLECTION_WEEKS_REFERENCE_TABLE dataset)
+
+	THEN
+
+	The Household’s Recycled Waste will be picked up that week
+
+ELSE
+	The Household’s Green Waste will be picked up that week
+
+ENDIF
+
+ENDIF
+
+
+
+EXAMPLE 2
+
+IF the Collection Day (in WASTE_COLLECTION_DAYS dataset) is “FRIDAY ODD” 
+
+THEN
+
+The Household’s General Waste will be picked up every FRIDAY and
+
+IF the current week is designated as an ODD week (in WASTE_COLLECTION_WEEKS_REFERENCE_TABLE dataset)
+
+	THEN
+
+	The Household’s Recycled Waste will be picked up that week
+
+ELSE
+	The Household’s Green Waste will be picked up that week
+
+ENDIF
+
+ENDIF
