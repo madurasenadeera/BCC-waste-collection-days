@@ -1,5 +1,6 @@
-import csv  # allows importing/manipulation/writing of csv files
+#!/usr/bin/env python3
 
+import csv  # allows importing/manipulation/writing of csv files
 import tkinter as tk  # GUI
 
 
@@ -29,11 +30,6 @@ def searchProperty():
             else:
                 #print("Invalid suburb name.")
                 pass
-
-
-def testGet():
-    x = numberEntry.get()
-    print(x)
 
 ###########################
 # Initialising GUI window
