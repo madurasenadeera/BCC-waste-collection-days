@@ -1,5 +1,19 @@
-import csv
-import tkinter
+import csv # allows importing/manipulation/writing of csv files
+import tkinter as tk # GUI 
+
+
+###########################
+# Initialising GUI window
+###########################
+
+window = tk.Tk()
+window.title("BCC Waste Collection")
+window.geometry("800x600")
+
+frame = tk.Frame(window)
+frame.pack()
+
+window.mainloop()
 
 # importing csv information, 'r' denotes the reading of the file
 with open('/Users/madurasenadeera/github/BCC_waste_collection_days/data/Waste Collection Days.csv', 'r') as csv_file:
@@ -24,3 +38,5 @@ with open('/Users/madurasenadeera/github/BCC_waste_collection_days/data/Waste Co
         else:
             #print("Invalid suburb name.")
             pass
+
+
