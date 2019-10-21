@@ -14,6 +14,6 @@ Exploring the use of Brisbane City Council waste collection data with intentions
 * press *Search*
 
 # Screenshot
-
-
+<img src= "Screenshot%20-%20GUI.png" width="300">
+Screenshot of GUI
 
