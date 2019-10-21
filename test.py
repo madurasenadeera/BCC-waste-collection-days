@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import csv  # allows importing/manipulation/writing of csv files
-from tkinter import *  # as tk  # GUI
+import csv
+from tkinter import *
+
+###########################
+# CSV data extraction
+###########################
 
 suburbList = []
 streetList = []
@@ -19,36 +23,32 @@ with open('/Users/madurasenadeera/github/BCC_waste_collection_days/data/Waste Co
 lista = suburbs  # IMPORTING SUBURBS
 listb = streets
 
+###########################
+# FINDING ADDRESS
+###########################
+
 
 def searchProperty():
     # importing csv information, 'r' denotes the reading of the file
     with open('/Users/madurasenadeera/github/BCC_waste_collection_days/data/Waste Collection Days.csv', 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
 
-    # print(csv_reader) # prints object for the imported csv file
-    # next(csv_reader)  # steps over initial value ("suburb")
-
-    # for line in csv_reader:
-    #    print(line[8])
-
-    # unitQn = input('')
-
-        number = numberEntry.get()
+        number = numberEntry.get()  # pulling information from GUI entry boxes
         street = streetEntry.get()
         suburb = suburbEntry.get()
 
-        for line in csv_reader:
+        for line in csv_reader:  # for-loop to filter through data from CSV file
             # line[8]:
+            # comparing entered info with data
             if ((line[3] == number) and (line[5] == street.upper()) and (line[8] == suburb.upper())):
-
-                searchLabel["text"] = line[1]
+                searchLabel["text"] = line[1]  # print out bin day info
 
             else:
-                #print("Invalid suburb name.")
-                pass
+                #searchLabel["text"] = "Invalid Address"
+                pass  # need to add functionality to tell user that the address is not valid
 
 ###########################
-# autocomplete function
+# TEXT AUTOCOMPLETE FUNCTION
 ###########################
 
 
@@ -133,32 +133,33 @@ class AutocompleteEntry(Entry):
 
 
 ###########################
-# Initialising GUI window
+# TKINTER GUI
 ###########################
 
 window = Tk()
 window.title("BCC Waste Collection")
-# window.geometry("800x600")
 
+label = Label(window, text="Waste Collection Day").pack()  # GUI title
 
-label = Label(window, text="Waste Collection Day").pack()
-
+# suburb entry box
 suburbLabel = Label(window, text="Suburb").pack()
-#suburbEntry = tk.Entry(window)
-
 suburbEntry = AutocompleteEntry(lista, window)
 suburbEntry.pack()
+
+# street name entry box
 streetLabel = Label(window, text="Street").pack()
-#streetEntry = Entry(window)
-# streetEntry.pack()
 streetEntry = AutocompleteEntry(listb, window)
 streetEntry.pack()
+
+# street number entry box
 numberLabel = Label(window, text="House number").pack()
 numberEntry = Entry(window)
 numberEntry.pack()
 
+# search button
 searchButton = Button(window, text="Search", command=searchProperty).pack()
 
+# entry space to displace bin day
 searchLabel = Label(window)
 searchLabel.pack()
 
