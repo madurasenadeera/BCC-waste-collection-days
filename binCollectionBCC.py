@@ -16,7 +16,6 @@ with open('/Users/madurasenadeera/github/BCC_waste_collection_days/data/Waste Co
         streetList.append(values[5])
 
     suburbs = list(dict.fromkeys(suburbList))  # removes duplicate suburbs
-    # print(suburbs)  # print list of suburbs
     streets = list(dict.fromkeys(streetList))
 
 lista = suburbs  # IMPORTING SUBURBS
